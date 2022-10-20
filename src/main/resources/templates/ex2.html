@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>데이터 출력2</title>
+</head>
+<body>
+<ul>
+  <li th:each="vo, state : ${list}">
+    [[${state.index}+1]] -
+    <a th:href="@{/exview}">[[${vo.sno}]]</a>
+    <span th:if="${vo.sno % 3 ==0}">[[${vo.first}]]</span>
+    <span th:unless="${vo.sno % 3 ==0}">[[${vo.end}]]</span>
+
+  </li>
+</ul>
+</body>
+</html>
